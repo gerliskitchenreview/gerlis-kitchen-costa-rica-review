@@ -56,6 +56,14 @@
     .sources th,.sources td { padding:12px 10px; border-bottom:1px solid var(--line); vertical-align:top; text-align:left; }
     .sources th { background:var(--wash); font-size:.78rem; letter-spacing:.05em; text-transform:uppercase; }
     .small { color:var(--muted); font-size:.92rem; }
+    .discovery { margin:26px 0; padding:22px 22px 18px; border:2px solid #b76e00; border-radius:14px; background:#fffaf0; }
+    .discovery > h3 { margin:0 0 6px; font-size:1.35rem; letter-spacing:-.01em; color:#5c3d00; }
+    .discovery .kicker { margin:0 0 12px; font-size:.8rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:#8a5700; }
+    .match { width:100%; border-collapse:collapse; margin:14px 0 6px; font-size:.95rem; background:#fff; border:1px solid #e1c27c; }
+    .match th { padding:10px 12px; background:#f7ead0; color:#5c3d00; font-size:.8rem; letter-spacing:.05em; text-transform:uppercase; text-align:left; border:1px solid #e1c27c; }
+    .match td { padding:10px 12px; border:1px solid #e1c27c; vertical-align:top; }
+    .match tr.hit td { background:#fff3d7; font-weight:700; }
+    @media (max-width:700px) { .match { display:block; overflow-x:auto; } }
     .chart-wrap { margin:20px 0; padding:18px 20px; border:1px solid var(--line); border-radius:12px; background:#fff; }
     .chart-wrap svg { display:block; width:100%; height:auto; }
     .icon { display:block; margin:0 auto 8px; width:30px; height:30px; }
@@ -69,13 +77,13 @@
     <div class="shell">
       <p class="eyebrow">A first-person consumer warning</p>
       <h1>Halfway through our trip, we googled our private chef. Another family had already written the warning.</h1>
-      <p class="lede">In June 2026 my family hired a private chef in Guanacaste, Costa Rica for a week of meals around my mother's 80th birthday. We paid approximately US$4,350–US$4,360. We received three meals, an accident story, and a doorbell ring. Then we found a Reddit post from January describing, step for step, the same sequence happening to another family. This page tells the whole story, with the receipts, so it doesn't happen to you.</p>
+      <p class="lede">In June 2026 my family hired a private chef in Guanacaste, Costa Rica for a week of meals around my mother's 80th birthday. We paid approximately US$4,350–US$4,360. We received three meals, then a sudden accident story, and service never resumed. When we searched his name to check whether the accident was real, we found another family's warning from January: same name, same business, same sequence, same accident. This page tells the whole story, with the receipts, so it doesn't happen to you.</p>
       <p class="status"><strong>Last reviewed: July 24, 2026.</strong> This is my own first-person account of a documented private-chef booking and repayment dispute. It is not a legal finding; the business's side is included in full below.</p>
     </div>
   </header>
 
   <nav aria-label="Page sections"><div class="shell"><ul>
-    <li><a href="#story">The story</a></li><li><a href="#money">The money</a></li><li><a href="#pattern">The pattern</a></li><li><a href="#business">Business response</a></li><li><a href="#timeline">Timeline</a></li><li><a href="#other-report">The other report</a></li><li><a href="#safeguards">Protect yourself</a></li><li><a href="#sources">Sources</a></li>
+    <li><a href="#story">The story</a></li><li><a href="#discovery">The discovery</a></li><li><a href="#money">The money</a></li><li><a href="#pattern">The pattern</a></li><li><a href="#business">Business response</a></li><li><a href="#timeline">Timeline</a></li><li><a href="#other-report">The other report</a></li><li><a href="#safeguards">Protect yourself</a></li><li><a href="#sources">Sources</a></li>
   </ul></div></nav>
 
   <main class="shell">
@@ -98,11 +106,23 @@
       <p>He delivered, at first. We arrived Friday, June 19, 2026, and he cooked that night. Saturday, June 20, was the birthday: the cake, the balloons, dinner for the whole family. My mother turned 80 surrounded by her kids and grandkids, and honestly, the food was good. Sunday, June 21 was a scheduled quiet day; he restocked groceries.</p>
 
       <h3>The accident text</h3>
-      <p>Monday, June 22, we were out on a diving trip when the message came in at 12:08 PM: he'd had a minor car accident, lunch was impossible, could we reschedule to tomorrow. Accidents happen; we said fine, offered to cover an Uber so dinner could still go ahead. He couldn't do dinner either. Something about the volume of explanation, paragraphs and paragraphs of it, made us uneasy.</p>
+      <p>Monday, June 22, we were out on a diving trip when the message came in at 12:08 PM: he'd had a minor car accident, lunch was impossible, could we reschedule to tomorrow. Accidents happen; we said fine, offered to cover an Uber so dinner could still go ahead. He couldn't do dinner either. Something about the volume of explanation, paragraphs and paragraphs of it, made us uneasy. So that afternoon, sitting in a villa in Costa Rica with a fully paid-up chef who had suddenly stopped cooking, we searched his name. We weren't looking for reviews. We were checking whether the accident was real.</p>
 
-      <h3>So we googled him</h3>
-      <p>That afternoon, sitting in a villa in Costa Rica with a paid-up chef who had suddenly stopped cooking, we searched his business name. The top result stopped us cold: a January 2026 post in r/CostaRicaTravel, written by another family about the same business. Contract. 50% upfront via Wise. Professional and friendly. Initial meals delivered. Then an accident. Then refund promises. Then silence. It was our week, written down six months before it happened to us.</p>
-      <p>We sent him the link that same afternoon and told him that, given the money at stake, we were nervous. He called it a misunderstanding and promised to resume the next day. He did not dispute knowing about the post.</p>
+      <div class="discovery" id="discovery">
+        <p class="kicker">The moment we knew</p>
+        <h3>The accident excuse had already been used, on another family, six months earlier</h3>
+        <p>The top result was a January 2026 post in r/CostaRicaTravel, written by a different family about a chef with the same name, at the same business. We read it standing in the kitchen he was supposed to be cooking in. Their week and our week matched, beat for beat, and the beat that matched most exactly was the one that had just happened to us: the sudden accident that stops all service right after payment is complete.</p>
+        <table class="match">
+          <thead><tr><th scope="col">Their January post said</th><th scope="col">Our June week, as it happened</th></tr></thead>
+          <tbody>
+            <tr><td>"He sent a contract, asked for 50% upfront via Wise, and seemed professional."</td><td>Signed contract, Wise transfers upfront, warm and professional planning chat.</td></tr>
+            <tr><td>Initial meals were delivered.</td><td>Three good days, including my mother's 80th birthday dinner.</td></tr>
+            <tr class="hit"><td>⚠ Then an accident, and service stopped.</td><td>⚠ June 22: accident text at 12:08 PM, once the balance was fully paid. Service never resumed.</td></tr>
+            <tr><td>"Refund 'coming Dec 31,' then 'Jan 2,' then silence."</td><td>US$2,000 refund agreed; US$500 sent; his own July 12 and July 19 dates passed in silence.</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-bottom:0">That is the moment this stopped feeling like bad luck. The same name was attached to the same sequence, told by strangers, half a year apart. We weren't having an unlucky vacation; we believed, right then, that we were inside a script that had run before. We sent him the link that same afternoon. He called it a misunderstanding, promised to resume the next day, and never disputed knowing about the post. <a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/warning_about_gerlis_kitchen_private_chef_scam_in/" target="_blank" rel="noopener noreferrer">Read their post yourself</a>; it is the single most useful thing on this page.</p>
+      </div>
 
       <h3>The doorbell</h3>
       <p>Tuesday, June 23: he agreed to arrive at 11 AM and finish out the week. He came to the property, and by our account rang the doorbell, and immediately drove away. We went outside right away and watched him leave. His version differs: he says the gate guard denied him entry and calls that a breach of a confidentiality clause, because we had verified his identity documents with the villa. Our version: we reached the gate within about five minutes of being notified, the concierge welcomed him back, and the guards had only asked him to wait. Both versions end the same way. He never cooked for us again. Of the roughly 14–15 contracted meals, 3 were delivered.</p>
