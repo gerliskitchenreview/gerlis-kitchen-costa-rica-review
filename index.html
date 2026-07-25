@@ -6,24 +6,27 @@
   <meta name="description" content="GerLi's Kitchen review: a source-linked public record of a private-chef booking and repayment dispute with chef Gerson Gerardo Matarrita Obando in Guanacaste, Costa Rica.">
   <title>GerLi's Kitchen (chef Gerson Matarrita) review: documented private-chef booking and repayment dispute | Guanacaste</title>
   <style>
-    :root { --ink:#15202b; --muted:#596775; --line:#d8e0e7; --paper:#fff; --wash:#f3f7fa; --blue:#135d8d; --blue-dark:#0d4264; --amber:#8a5700; --green:#166534; }
+    :root { --ink:#241a10; --muted:#6b5b48; --line:#e7d7c1; --paper:#fdf7ec; --wash:#e6f3f2; --blue:#0e7490; --blue-dark:#0b4a5c; --amber:#8a5700; --green:#166534; --sunset:#c2410c; --mango:#f59e0b; --sand:#fdf7ec; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
-    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    body { margin:0; color:var(--ink); background:var(--sand); font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
     a { color:var(--blue-dark); text-underline-offset:3px; }
     a:focus-visible { outline:3px solid #f5b700; outline-offset:3px; }
     .shell { width:min(100% - 32px, 980px); margin:auto; }
-    .masthead { padding:66px 0 46px; color:#fff; background:linear-gradient(135deg,#0d4264,#135d8d 58%,#1b7a9d); }
-    .eyebrow { margin:0 0 10px; font-size:.82rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; opacity:.88; }
-    h1 { max-width:880px; margin:0; font-size:clamp(2rem,5vw,3.5rem); line-height:1.1; letter-spacing:-.03em; }
+    .masthead { position:relative; padding:86px 0 92px; color:#fff; background:linear-gradient(180deg, rgba(11,42,58,.42) 0%, rgba(30,17,7,.62) 70%, rgba(30,17,7,.78) 100%), url("assets/tamarindo-hero-crop.jpg") center 42%/cover no-repeat; }
+    .masthead::after { content:""; position:absolute; left:0; right:0; bottom:-1px; height:44px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0,32 C240,62 480,2 720,22 C960,42 1200,56 1440,24 L1440,60 L0,60 Z' fill='%23fdf7ec'/%3E%3C/svg%3E") bottom/100% 100% no-repeat; }
+    .masthead h1, .masthead .lede { text-shadow:0 2px 16px rgba(0,0,0,.6), 0 1px 3px rgba(0,0,0,.5); }
+    .eyebrow { display:inline-block; margin:0 0 14px; padding:6px 14px; border:1px solid rgba(255,255,255,.4); border-radius:999px; background:rgba(20,10,2,.45); font-size:.82rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:#ffd98a; }
+    h1 { max-width:880px; margin:0; font-size:clamp(2rem,5vw,3.4rem); line-height:1.1; letter-spacing:-.03em; }
     .lede { max-width:780px; margin:20px 0 0; font-size:1.18rem; }
-    .status { margin:20px 0 0; font-size:.95rem; opacity:.92; }
-    nav { position:sticky; top:0; z-index:5; border-bottom:1px solid var(--line); background:rgba(255,255,255,.96); backdrop-filter:blur(12px); }
+    .status { display:inline-block; margin:22px 0 0; padding:10px 16px; border-radius:12px; background:rgba(15,8,2,.5); font-size:.95rem; }
+    nav { position:sticky; top:0; z-index:5; border-bottom:1px solid var(--line); background:rgba(253,247,236,.95); backdrop-filter:blur(12px); }
     nav ul { display:flex; gap:18px; margin:0; padding:12px 0; overflow:auto; list-style:none; white-space:nowrap; }
     nav a { font-size:.9rem; font-weight:700; text-decoration:none; }
     main { padding:34px 0 76px; }
     section { scroll-margin-top:60px; margin:0 0 52px; }
-    h2 { margin:0 0 14px; font-size:1.6rem; line-height:1.2; letter-spacing:-.015em; }
+    h2 { position:relative; margin:0 0 18px; padding-bottom:12px; font-size:1.6rem; line-height:1.2; letter-spacing:-.015em; }
+    h2::after { content:""; position:absolute; left:0; bottom:0; width:64px; height:5px; border-radius:3px; background:linear-gradient(90deg, var(--sunset), var(--mango) 55%, var(--blue)); }
     h3 { margin:30px 0 8px; font-size:1.12rem; }
     .beat h3 { display:flex; align-items:center; gap:10px; }
     .beat h3::before { content:""; flex:0 0 10px; height:10px; border-radius:50%; background:var(--blue); }
@@ -33,12 +36,12 @@
     .notice.warn { border-left-color:#b76e00; background:#fffaf0; }
     .notice.warn strong { color:#8a5700; }
     .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
-    .card { padding:20px; border:1px solid var(--line); border-radius:12px; background:#fff; }
+    .card { padding:20px; border:1px solid var(--line); border-radius:12px; background:#fff; box-shadow:0 2px 10px rgba(120,80,30,.06); }
     .card h3 { margin-top:0; }
-    .tag { display:inline-block; margin-bottom:10px; padding:3px 9px; border-radius:999px; background:#e8f1f7; color:var(--blue-dark); font-size:.75rem; font-weight:800; letter-spacing:.04em; text-transform:uppercase; }
+    .tag { display:inline-block; margin-bottom:10px; padding:3px 9px; border-radius:999px; background:#dcefee; color:var(--blue-dark); font-size:.75rem; font-weight:800; letter-spacing:.04em; text-transform:uppercase; }
     .tag.disputed { background:#fff3d7; color:var(--amber); }
     .tag.open { background:#edf7ef; color:var(--green); }
-    blockquote { margin:16px 0; padding:14px 18px; border-left:4px solid #8cb7cd; background:#f7fafc; color:#253746; }
+    blockquote { margin:16px 0; padding:14px 18px; border-left:4px solid var(--mango); background:#fff; border-radius:0 10px 10px 0; color:#3a2c1c; box-shadow:0 2px 10px rgba(120,80,30,.06); }
     blockquote p:last-child { margin-bottom:0; }
     blockquote cite { display:block; margin-top:8px; font-size:.88rem; font-style:normal; color:var(--muted); }
     .timeline { margin:0; padding:0; list-style:none; border-left:2px solid var(--line); }
@@ -67,7 +70,7 @@
     .chart-wrap { margin:20px 0; padding:18px 20px; border:1px solid var(--line); border-radius:12px; background:#fff; }
     .chart-wrap svg { display:block; width:100%; height:auto; }
     .icon { display:block; margin:0 auto 8px; width:30px; height:30px; }
-    footer { padding:26px 0; border-top:1px solid var(--line); color:var(--muted); font-size:.92rem; }
+    footer { padding:26px 0; border-top:4px solid; border-image:linear-gradient(90deg, var(--sunset), var(--mango), var(--blue), var(--green)) 1; color:var(--muted); font-size:.92rem; background:#fff; }
     @media (max-width:900px) { .pattern-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media (max-width:700px) { .grid,.pattern-grid { grid-template-columns:1fr; } .pattern-step { min-height:0; } .sources { display:block; overflow-x:auto; white-space:normal; } .masthead { padding:48px 0 34px; } }
   </style>
