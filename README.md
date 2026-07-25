@@ -15,6 +15,6 @@ Private chat exports, payment identifiers, contact details, and unverified media
 
 The intended GitHub Pages address, once the repository is created under the intended account and Pages is enabled, is:
 
-`https://indigocybershell.github.io/gerlis-kitchen-costa-rica-review/`
+`https://gerliskitchenreview.github.io/gerlis-kitchen-costa-rica-review/`
 
 Before publishing, review `index.html` and the source register at the bottom of the page. After GitHub Pages is live, add that exact address to `drafts/reddit-update-ready.md` before submitting the Reddit update.
