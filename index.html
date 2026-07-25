@@ -51,6 +51,9 @@
     .sources th,.sources td { padding:12px 10px; border-bottom:1px solid var(--line); vertical-align:top; text-align:left; }
     .sources th { background:var(--wash); font-size:.78rem; letter-spacing:.05em; text-transform:uppercase; }
     .small { color:var(--muted); font-size:.92rem; }
+    .chart-wrap { margin:20px 0; padding:18px 20px; border:1px solid var(--line); border-radius:12px; background:#fff; }
+    .chart-wrap svg { display:block; width:100%; height:auto; }
+    .icon { display:block; margin:0 auto 8px; width:30px; height:30px; }
     footer { padding:26px 0; border-top:1px solid var(--line); color:var(--muted); font-size:.92rem; }
     @media (max-width:900px) { .pattern-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media (max-width:700px) { .grid,.pattern-grid { grid-template-columns:1fr; } .pattern-step { min-height:0; } .sources { display:block; overflow-x:auto; white-space:normal; } .masthead { padding:48px 0 34px; } }
@@ -90,6 +93,29 @@
       <p>We arrived on Friday, June 19, 2026, and the chef prepared food that day. On Saturday, June 20, he also prepared food for my mother's 80th birthday, including a cake and balloon decorations arranged in advance. Service continued on a smaller scale on Sunday, June 21 (grocery restocking); no separate full chef service was scheduled that day. On Monday, June 22, the chef told us he had been in an accident and could not continue lunch, saying a staff member had been injured; we agreed to move that day's meals to the following day. During this exchange, we directly told the chef about the January 2026 Reddit report described below, noting the similarity in fact pattern; he did not dispute awareness of it.</p>
       <p>On Tuesday, June 23, the chef came to the house, rang the doorbell, and immediately returned to his car and drove away. We went outside immediately and watched him leave. The chef says the villa's guard denied him entry, and describes this as a breach of a confidentiality clause over sharing his identification in the group chat. We reached the gate within about five minutes of being notified, the concierge welcomed him back, and guards had only asked him to wait — he was not denied entry outright. Either way, chef service did not resume after this point. Of the roughly 14–15 contracted meals, 3 were delivered before service stopped. We continued texting during the remainder of the trip in an attempt to resolve the matter and later filed a police report. A copy of that report has not yet been added to this record.</p>
       <div class="notice"><strong>Why the cash gap matters.</strong> Before cooking would begin, the chef personally requested an additional cash payment. In our original booking chat, he wrote on June 18: "please remember to have the rest of the cash ready when we meet up... having that cash on hand is super important for me to keep moving forward." That evening we and the chef both confirmed a remaining cash balance near US$2,190 (not including cake or other extras) was expected in person on arrival. Comparing that figure with the business's later US$600 cash acknowledgment, and comparing our asserted US$4,350–US$4,360 total with the business's later US$2,770 accounting, leaves approximately US$1,580–US$1,590 of our payments unreflected in that accounting. The business disputes the total, and the exact cash amount and reconciliation remain disputed — but the written, dated request for that cash, made before any dispute existed, is now part of the record.</div>
+      <div class="chart-wrap" role="img" aria-label="Payment reconciliation chart. Top bar: what I say was paid in total, US$4,360. Bottom bar, same scale: the business's accounting, made up of US$2,170 verified through Wise, US$600 acknowledged in cash, and a hatched US$1,590 segment labeled unaccounted for.">
+        <svg viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="gapHatch" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+              <rect width="8" height="8" fill="#f3f7fa"/>
+              <line x1="0" y1="0" x2="0" y2="8" stroke="#8a5700" stroke-width="2"/>
+            </pattern>
+          </defs>
+          <text x="0" y="18" font-size="14" font-weight="700" fill="#15202b">What I say was paid</text>
+          <rect x="0" y="28" width="600" height="38" rx="6" fill="#135d8d"/>
+          <text x="14" y="53" font-size="15" font-weight="700" fill="#ffffff">US$4,360 total</text>
+
+          <text x="0" y="100" font-size="14" font-weight="700" fill="#15202b">The business's own accounting</text>
+          <rect x="0" y="110" width="298.6" height="38" fill="#0f6f6b"/>
+          <text x="12" y="135" font-size="13" font-weight="700" fill="#ffffff">Wise: $2,170</text>
+          <rect x="298.6" y="110" width="82.6" height="38" fill="#8a5700"/>
+          <text x="303" y="135" font-size="11.5" font-weight="700" fill="#ffffff">Cash: $600</text>
+          <rect x="381.2" y="110" width="218.8" height="38" fill="url(#gapHatch)"/>
+          <text x="388" y="135" font-size="12.5" font-weight="700" fill="#5c3d00">Unaccounted: ~$1,590</text>
+          <rect x="0" y="110" width="600" height="38" rx="6" fill="none" stroke="#15202b" stroke-width="1"/>
+        </svg>
+        <p class="small" style="margin-top:10px">Bar widths are proportional to dollar amounts, both on the same scale. The business's July 22 accounting (US$2,170 verified through Wise, plus US$600 acknowledged in cash) totals US$2,770 — leaving roughly US$1,590 of my asserted US$4,360 unaccounted for. That gap is disputed, not proven, but shown to scale here.</p>
+      </div>
       <p>I have now reviewed the complete original booking chat for this record; it corroborates the Wise payment totals, the cash request, and the meal count above. The signed contract document, payment receipts, and a full itemized service record are still not published here, and the original chat itself is not published in raw form. Those materials contain private information; their absence also means this page does not claim to determine the final balance, exact service value, or contractual responsibility.</p>
     </section>
 
@@ -97,11 +123,11 @@
       <h2>The pattern I believe this followed</h2>
       <p>Here is the sequence as I experienced it. These are not a court or police finding, and the reported accident has not been independently verified.</p>
       <div class="pattern-grid" role="list" aria-label="Five-step booking pattern I believe this followed">
-        <article class="pattern-step" role="listitem"><h3>Advance payment</h3><p>We paid for a multi-meal booking, including cash personally requested before cooking would begin.</p></article>
-        <article class="pattern-step" role="listitem"><h3>Brief initial service</h3><p>The chef prepared food on June 19 and for my mother's 80th birthday on June 20.</p></article>
-        <article class="pattern-step" role="listitem"><h3>Accident explanation</h3><p>On June 22, the chef said he had been in an accident and could not continue.</p></article>
-        <article class="pattern-step" role="listitem"><h3>Service stopped</h3><p>On June 23, he rang the doorbell and immediately drove away. No further chef service was provided.</p></article>
-        <article class="pattern-step" role="listitem"><h3>Repayment unresolved</h3><p>Texts continued, and US$500 was later acknowledged as returned, but the accounting and remaining repayment remain disputed.</p></article>
+        <article class="pattern-step" role="listitem"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#8a5700" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 15.5c0 1 1 1.8 3 1.8s3-.8 3-1.9c0-2.6-6-1-6-3.6 0-1.1 1-1.9 3-1.9s3 .8 3 1.8" stroke-linecap="round"/><path d="M12 6.3v1.4M12 16.3v1.4" stroke-linecap="round"/></svg><h3>Advance payment</h3><p>We paid for a multi-meal booking, including cash personally requested before cooking would begin.</p></article>
+        <article class="pattern-step" role="listitem"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#8a5700" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 6.5v5.5l3.5 2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Brief initial service</h3><p>The chef prepared food on June 19 and for my mother's 80th birthday on June 20.</p></article>
+        <article class="pattern-step" role="listitem"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#8a5700" stroke-width="1.8" stroke-linejoin="round"><path d="M12 4 21 19H3z"/><path d="M12 10v4" stroke-linecap="round"/><circle cx="12" cy="16.7" r=".9" fill="#8a5700" stroke="none"/></svg><h3>Accident explanation</h3><p>On June 22, the chef said he had been in an accident and could not continue.</p></article>
+        <article class="pattern-step" role="listitem"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#8a5700" stroke-width="1.8"><rect x="6" y="3.5" width="11" height="17" rx="1"/><circle cx="14.5" cy="12" r=".9" fill="#8a5700" stroke="none"/><path d="M17 8.5h3.5M20.5 8.5v7" stroke-linecap="round"/></svg><h3>Service stopped</h3><p>On June 23, he rang the doorbell and immediately drove away. No further chef service was provided.</p></article>
+        <article class="pattern-step" role="listitem"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#8a5700" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.7L4 16"/><path d="M4 20v-4h4"/></svg><h3>Repayment unresolved</h3><p>Texts continued, and US$500 was later acknowledged as returned, but the accounting and remaining repayment remain disputed.</p></article>
       </div>
       <div class="notice"><strong>Why I believe this may be a repeated pattern.</strong> A separate Reddit author independently described an advance-paid multi-meal booking, initial service, an accident explanation, service ending before completion, and a later repayment dispute. These similarities are why I believe this may be a repeatable scheme. The two accounts remain separate allegations; their dates, amounts, and communications differ, and the similarity alone does not establish criminal intent.</div>
     </section>
