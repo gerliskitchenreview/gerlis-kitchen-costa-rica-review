@@ -66,7 +66,14 @@
     .match th { padding:10px 12px; background:#f7ead0; color:#5c3d00; font-size:.8rem; letter-spacing:.05em; text-transform:uppercase; text-align:left; border:1px solid #e1c27c; }
     .match td { padding:10px 12px; border:1px solid #e1c27c; vertical-align:top; }
     .match tr.hit td { background:#fff3d7; font-weight:700; }
-    @media (max-width:700px) { .match { display:block; overflow-x:auto; } }
+    @media (max-width:700px) {
+      .match thead { display:none; }
+      .match, .match tbody, .match tr, .match td { display:block; width:100%; }
+      .match tr { margin:0 0 12px; border:1px solid #e1c27c; border-radius:10px; overflow:hidden; }
+      .match td { border:none; border-top:1px dashed #e1c27c; }
+      .match td:first-child { border-top:none; }
+      .match td::before { display:block; margin-bottom:3px; content:attr(data-label); font-size:.72rem; font-weight:900; letter-spacing:.06em; text-transform:uppercase; color:#8a5700; }
+    }
     .media-hero { margin:26px 0 8px; }
     .media-hero .frame { overflow:hidden; border-radius:16px; background:#000; box-shadow:0 14px 40px rgba(60,30,5,.28); }
     .media-hero video { display:block; width:100%; height:auto; }
@@ -77,11 +84,22 @@
     .audio-card .meta strong { display:block; font-size:1.05rem; }
     .audio-card audio { flex:1 1 100%; width:100%; }
     .chart-wrap { margin:20px 0; padding:18px 20px; border:1px solid var(--line); border-radius:12px; background:#fff; }
-    .chart-wrap svg { display:block; width:100%; height:auto; }
+    .chart-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+    .chart-wrap svg { display:block; width:100%; min-width:560px; height:auto; }
     .icon { display:block; margin:0 auto 8px; width:30px; height:30px; }
     footer { padding:26px 0; border-top:4px solid; border-image:linear-gradient(90deg, var(--sunset), var(--mango), var(--blue), var(--green)) 1; color:var(--muted); font-size:.92rem; background:#fff; }
     @media (max-width:900px) { .pattern-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-    @media (max-width:700px) { .grid,.pattern-grid { grid-template-columns:1fr; } .pattern-step { min-height:0; } .sources { display:block; overflow-x:auto; white-space:normal; } .masthead { padding:48px 0 34px; } }
+    @media (max-width:700px) {
+      .grid,.pattern-grid { grid-template-columns:1fr; }
+      .pattern-step { min-height:0; }
+      .masthead { padding:48px 0 60px; }
+      .sources thead { display:none; }
+      .sources, .sources tbody, .sources tr, .sources td { display:block; width:100%; }
+      .sources tr { margin:0 0 14px; border:1px solid var(--line); border-radius:12px; background:#fff; box-shadow:0 2px 8px rgba(120,80,30,.06); }
+      .sources td { border:none; padding:9px 14px; }
+      .sources td + td { border-top:1px dashed var(--line); }
+      .sources td::before { display:block; margin-bottom:2px; content:attr(data-label); font-size:.72rem; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); }
+    }
   </style>
 </head>
 <body>
@@ -110,6 +128,7 @@
     </section>
 
     <section id="read-first">
+      <div class="notice" style="margin-bottom:14px"><strong>Join the conversation:</strong> this story is posted and being discussed in r/CostaRicaTravel. If you have questions, firsthand experiences with this business, or booking advice for other travelers, please <a href="https://www.reddit.com/r/CostaRicaTravel/comments/1v5xjzd/update_midtrip_we_googled_our_private_chef_to/" target="_blank" rel="noopener noreferrer">add them to the Reddit thread</a> so everything stays in one public place.</div>
       <div class="notice warn"><strong>If you only read one thing:</strong> before booking any private chef, pay 100% traceably (never cash, whatever the stated reason), pay in milestones tied to delivered meals, and search the chef's name plus the word "review" before you send anything. The <a href="#safeguards">full checklist is below</a>. Everything else on this page is why.</div>
     </section>
 
@@ -137,10 +156,10 @@
         <table class="match">
           <thead><tr><th scope="col">Their January post said</th><th scope="col">Our June week, as it happened</th></tr></thead>
           <tbody>
-            <tr><td>"He sent a contract, asked for 50% upfront via Wise, and seemed professional."</td><td>Signed contract, Wise transfers upfront, warm and professional planning chat.</td></tr>
-            <tr><td>Initial meals were delivered.</td><td>Three good days, including my mother's 80th birthday dinner.</td></tr>
-            <tr class="hit"><td>⚠ Then an accident, and service stopped.</td><td>⚠ June 22: accident text at 12:08 PM, once the balance was fully paid. Service never resumed.</td></tr>
-            <tr><td>"Refund 'coming Dec 31,' then 'Jan 2,' then silence."</td><td>US$2,000 refund agreed; US$500 sent; his own July 12 and July 19 dates passed in silence.</td></tr>
+            <tr><td data-label="Their January post said">"He sent a contract, asked for 50% upfront via Wise, and seemed professional."</td><td data-label="Our June week, as it happened">Signed contract, Wise transfers upfront, warm and professional planning chat.</td></tr>
+            <tr><td data-label="Their January post said">Initial meals were delivered.</td><td data-label="Our June week, as it happened">Three good days, including my mother's 80th birthday dinner.</td></tr>
+            <tr class="hit"><td data-label="Their January post said">⚠ Then an accident, and service stopped.</td><td data-label="Our June week, as it happened">⚠ June 22: accident text at 12:08 PM, once the balance was fully paid. Service never resumed.</td></tr>
+            <tr><td data-label="Their January post said">"Refund 'coming Dec 31,' then 'Jan 2,' then silence."</td><td data-label="Our June week, as it happened">US$2,000 refund agreed; US$500 sent; his own July 12 and July 19 dates passed in silence.</td></tr>
           </tbody>
         </table>
         <p style="margin-bottom:0">That is the moment this stopped feeling like bad luck. The same name was attached to the same sequence, told by strangers, half a year apart. We weren't having an unlucky vacation; we believed, right then, that we were inside a script that had run before. We sent him the link that same afternoon. He called it a misunderstanding, promised to resume the next day, and never disputed knowing about the post. <a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/warning_about_gerlis_kitchen_private_chef_scam_in/" target="_blank" rel="noopener noreferrer">Read their post yourself</a>; it is the single most useful thing on this page.</p>
@@ -157,6 +176,7 @@
       <h2>The money</h2>
       <div class="notice"><strong>The cash is the whole game.</strong> Before cooking would begin, the chef personally requested an additional cash payment, in writing, in the message quoted above. That matters because cash is exactly the part his later accounting leaves out. Comparing our US$4,350–US$4,360 total against the business's later US$2,770 accounting leaves approximately US$1,580–US$1,590 of our payments unreflected in that accounting. The business disputes the total, and the exact cash amount and reconciliation remain disputed. But the written, dated request to bring cash, sent before any dispute existed, is part of the record.</div>
       <div class="chart-wrap" role="img" aria-label="Payment reconciliation chart. Top bar: what I say was paid in total, US$4,360. Bottom bar, same scale: the business's accounting, made up of US$2,170 verified through Wise, US$600 acknowledged in cash, and a hatched US$1,590 segment labeled unaccounted for.">
+        <div class="chart-scroll">
         <svg viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="gapHatch" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
@@ -177,6 +197,7 @@
           <text x="388" y="135" font-size="12.5" font-weight="700" fill="#5c3d00">Unaccounted: ~$1,590</text>
           <rect x="0" y="110" width="600" height="38" rx="6" fill="none" stroke="#15202b" stroke-width="1"/>
         </svg>
+        </div>
         <p class="small" style="margin-top:10px">Bar widths are proportional, on the same scale. The Wise figure is the one number both sides agree on: our three transfers of $735 + $735 + $700 match the US$2,170 he acknowledged, to the dollar. The dispute is the cash, which is the portion he asked for.</p>
       </div>
       <p>I have reviewed the complete original booking chat for this record; it corroborates the Wise payment totals, the cash request, and the meal count above. The signed contract document, payment receipts, and a full itemized service record are not published here, and the chat itself is not published in raw form, because they contain private information. Their absence also means this page does not claim to determine the final balance, exact service value, or contractual responsibility.</p>
@@ -289,13 +310,13 @@
       <table class="sources">
         <thead><tr><th>Record</th><th>Type</th><th>Status</th><th>Public source</th></tr></thead>
         <tbody>
-          <tr><td>My account and July settlement chronology</td><td>First-person account and private exchange</td><td>Attributed; private records redacted</td><td>My <a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/comment/ote34ne/" target="_blank" rel="noopener noreferrer">public Reddit comment</a></td></tr>
-          <tr><td>Original booking chat (June 11–July 24)</td><td>Direct chat export, both parties</td><td>Reviewed; corroborates Wise totals, cash request, and meal count; raw export not published</td><td>Summarized on this page with dates and attribution</td></tr>
-          <tr><td>June 19–23 trip chronology and police-report statement</td><td>My direct account</td><td>Attributed; visit evidence and report copy pending</td><td>Summarized on this page pending supporting records</td></tr>
-          <tr><td>Business payment accounting and response</td><td>Direct business statement</td><td>Disputed by me; private exchange not uploaded</td><td>Summarized on this page with date and attribution</td></tr>
-          <tr><td>Separate traveler account</td><td>Public first-person report</td><td>Allegation; separate from my account</td><td><a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/warning_about_gerlis_kitchen_private_chef_scam_in/" target="_blank" rel="noopener noreferrer">Original Reddit post</a></td></tr>
-          <tr><td>Family Facebook discussion</td><td>Public family posts</td><td>Same incident, not independent corroboration</td><td><a href="https://www.facebook.com/groups/costaricatravel/posts/27244275088526312/" target="_blank" rel="noopener noreferrer">Costa Rica Travel post</a></td></tr>
-          <tr><td>Business listings</td><td>Public business sources</td><td>Identity/context only</td><td><a href="https://gerliskitchen.com/" target="_blank" rel="noopener noreferrer">Business website</a></td></tr>
+          <tr><td data-label="Record">My account and July settlement chronology</td><td data-label="Type">First-person account and private exchange</td><td data-label="Status">Attributed; private records redacted</td><td data-label="Public source">My <a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/comment/ote34ne/" target="_blank" rel="noopener noreferrer">public Reddit comment</a></td></tr>
+          <tr><td data-label="Record">Original booking chat (June 11–July 24)</td><td data-label="Type">Direct chat export, both parties</td><td data-label="Status">Reviewed; corroborates Wise totals, cash request, and meal count; raw export not published</td><td data-label="Public source">Summarized on this page with dates and attribution</td></tr>
+          <tr><td data-label="Record">June 19–23 trip chronology and police-report statement</td><td data-label="Type">My direct account</td><td data-label="Status">Attributed; visit evidence and report copy pending</td><td data-label="Public source">Summarized on this page pending supporting records</td></tr>
+          <tr><td data-label="Record">Business payment accounting and response</td><td data-label="Type">Direct business statement</td><td data-label="Status">Disputed by me; private exchange not uploaded</td><td data-label="Public source">Summarized on this page with date and attribution</td></tr>
+          <tr><td data-label="Record">Separate traveler account</td><td data-label="Type">Public first-person report</td><td data-label="Status">Allegation; separate from my account</td><td data-label="Public source"><a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/warning_about_gerlis_kitchen_private_chef_scam_in/" target="_blank" rel="noopener noreferrer">Original Reddit post</a></td></tr>
+          <tr><td data-label="Record">Family Facebook discussion</td><td data-label="Type">Public family posts</td><td data-label="Status">Same incident, not independent corroboration</td><td data-label="Public source"><a href="https://www.facebook.com/groups/costaricatravel/posts/27244275088526312/" target="_blank" rel="noopener noreferrer">Costa Rica Travel post</a></td></tr>
+          <tr><td data-label="Record">Business listings</td><td data-label="Type">Public business sources</td><td data-label="Status">Identity/context only</td><td data-label="Public source"><a href="https://gerliskitchen.com/" target="_blank" rel="noopener noreferrer">Business website</a></td></tr>
         </tbody>
       </table>
     </section>
