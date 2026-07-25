@@ -67,6 +67,15 @@
     .match td { padding:10px 12px; border:1px solid #e1c27c; vertical-align:top; }
     .match tr.hit td { background:#fff3d7; font-weight:700; }
     @media (max-width:700px) { .match { display:block; overflow-x:auto; } }
+    .media-hero { margin:26px 0 8px; }
+    .media-hero .frame { overflow:hidden; border-radius:16px; background:#000; box-shadow:0 14px 40px rgba(60,30,5,.28); }
+    .media-hero video { display:block; width:100%; height:auto; }
+    .media-caption { margin:10px 2px 0; font-size:.95rem; color:var(--muted); }
+    .audio-card { display:flex; flex-wrap:wrap; gap:16px; align-items:center; padding:20px 22px; border:1px solid var(--line); border-radius:14px; background:#fff; box-shadow:0 2px 10px rgba(120,80,30,.08); }
+    .audio-card .art { flex:0 0 54px; height:54px; border-radius:12px; background:linear-gradient(135deg, var(--sunset), var(--mango)); display:flex; align-items:center; justify-content:center; }
+    .audio-card .meta { flex:1 1 240px; }
+    .audio-card .meta strong { display:block; font-size:1.05rem; }
+    .audio-card audio { flex:1 1 100%; width:100%; }
     .chart-wrap { margin:20px 0; padding:18px 20px; border:1px solid var(--line); border-radius:12px; background:#fff; }
     .chart-wrap svg { display:block; width:100%; height:auto; }
     .icon { display:block; margin:0 auto 8px; width:30px; height:30px; }
@@ -86,10 +95,20 @@
   </header>
 
   <nav aria-label="Page sections"><div class="shell"><ul>
-    <li><a href="#story">The story</a></li><li><a href="#discovery">The discovery</a></li><li><a href="#money">The money</a></li><li><a href="#pattern">The pattern</a></li><li><a href="#business">Business response</a></li><li><a href="#timeline">Timeline</a></li><li><a href="#other-report">The other report</a></li><li><a href="#safeguards">Protect yourself</a></li><li><a href="#sources">Sources</a></li>
+    <li><a href="#watch">Watch</a></li><li><a href="#story">The story</a></li><li><a href="#discovery">The discovery</a></li><li><a href="#money">The money</a></li><li><a href="#listen">Listen</a></li><li><a href="#pattern">The pattern</a></li><li><a href="#business">Business response</a></li><li><a href="#timeline">Timeline</a></li><li><a href="#other-report">The other report</a></li><li><a href="#safeguards">Protect yourself</a></li><li><a href="#sources">Sources</a></li>
   </ul></div></nav>
 
   <main class="shell">
+    <section id="watch" class="media-hero">
+      <div class="frame">
+        <video controls playsinline preload="none" poster="assets/video-poster.jpg" aria-label="The Vacation Mirage: our video telling of this documented booking dispute, 7 minutes 54 seconds">
+          <source src="assets/the-vacation-mirage.mp4" type="video/mp4">
+          Your browser can't play this video. <a href="assets/the-vacation-mirage.mp4">Download it instead</a>.
+        </video>
+      </div>
+      <p class="media-caption"><strong>Watch: The Vacation Mirage</strong> (7 min 54 s) - our video telling of the documented experience below. Everything it describes is sourced on this page.</p>
+    </section>
+
     <section id="read-first">
       <div class="notice warn"><strong>If you only read one thing:</strong> before booking any private chef, pay 100% traceably (never cash, whatever the stated reason), pay in milestones tied to delivered meals, and search the chef's name plus the word "review" before you send anything. The <a href="#safeguards">full checklist is below</a>. Everything else on this page is why.</div>
     </section>
@@ -161,6 +180,18 @@
         <p class="small" style="margin-top:10px">Bar widths are proportional, on the same scale. The Wise figure is the one number both sides agree on: our three transfers of $735 + $735 + $700 match the US$2,170 he acknowledged, to the dollar. The dispute is the cash, which is the portion he asked for.</p>
       </div>
       <p>I have reviewed the complete original booking chat for this record; it corroborates the Wise payment totals, the cash request, and the meal count above. The signed contract document, payment receipts, and a full itemized service record are not published here, and the chat itself is not published in raw form, because they contain private information. Their absence also means this page does not claim to determine the final balance, exact service value, or contractual responsibility.</p>
+    </section>
+
+    <section id="listen">
+      <h2>Listen to the full story</h2>
+      <div class="audio-card">
+        <div class="art" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
+        <div class="meta"><strong>The Costa Rica Private Chef Scam (audio, 47 min)</strong><span class="small">The full deep-dive account of everything documented on this page: the booking, the cash, the accident, the discovery, and the aftermath.</span></div>
+        <audio controls preload="none" aria-label="The Costa Rica Private Chef Scam: 47 minute audio account">
+          <source src="assets/costa-rica-private-chef-scam-audio.m4a" type="audio/mp4">
+          Your browser can't play this audio. <a href="assets/costa-rica-private-chef-scam-audio.m4a">Download it instead</a>.
+        </audio>
+      </div>
     </section>
 
     <section id="pattern">
