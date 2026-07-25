@@ -40,6 +40,11 @@
     .timeline li { position:relative; padding:0 0 24px 26px; }
     .timeline li::before { position:absolute; left:-7px; top:5px; width:12px; height:12px; border-radius:50%; background:var(--blue); content:""; }
     .timeline time { display:block; margin-bottom:3px; color:var(--blue-dark); font-size:.85rem; font-weight:800; letter-spacing:.04em; text-transform:uppercase; }
+    .pattern-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px; margin:18px 0; counter-reset:pattern-step; }
+    .pattern-step { position:relative; min-height:190px; padding:18px 16px; border:1px solid #e1c27c; border-top:5px solid #b76e00; border-radius:12px; background:#fffaf0; counter-increment:pattern-step; }
+    .pattern-step::before { display:block; margin-bottom:10px; color:#8a5700; font-size:.78rem; font-weight:900; letter-spacing:.06em; text-transform:uppercase; content:"Step " counter(pattern-step); }
+    .pattern-step h3 { margin:0 0 8px; }
+    .pattern-step p { margin:0; font-size:.92rem; line-height:1.5; }
     ul,ol { padding-left:22px; }
     li { margin:6px 0; }
     .sources { width:100%; border-collapse:collapse; font-size:.94rem; }
@@ -47,7 +52,8 @@
     .sources th { background:var(--wash); font-size:.78rem; letter-spacing:.05em; text-transform:uppercase; }
     .small { color:var(--muted); font-size:.92rem; }
     footer { padding:26px 0; border-top:1px solid var(--line); color:var(--muted); font-size:.92rem; }
-    @media (max-width:700px) { .grid { grid-template-columns:1fr; } .sources { display:block; overflow-x:auto; white-space:normal; } .masthead { padding:48px 0 34px; } }
+    @media (max-width:900px) { .pattern-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:700px) { .grid,.pattern-grid { grid-template-columns:1fr; } .pattern-step { min-height:0; } .sources { display:block; overflow-x:auto; white-space:normal; } .masthead { padding:48px 0 34px; } }
   </style>
 </head>
 <body>
@@ -61,7 +67,7 @@
   </header>
 
   <nav aria-label="Page sections"><div class="shell"><ul>
-    <li><a href="#summary">Summary</a></li><li><a href="#family">Family account</a></li><li><a href="#business">Business response</a></li><li><a href="#timeline">Timeline</a></li><li><a href="#other-report">Other public report</a></li><li><a href="#sources">Sources</a></li>
+    <li><a href="#summary">Summary</a></li><li><a href="#family">Family account</a></li><li><a href="#pattern">Alleged pattern</a></li><li><a href="#business">Business response</a></li><li><a href="#timeline">Timeline</a></li><li><a href="#other-report">Other public report</a></li><li><a href="#sources">Sources</a></li>
   </ul></div></nav>
 
   <main class="shell">
@@ -79,8 +85,23 @@
     <section id="family">
       <h2>Our family's account</h2>
       <p>Our family arranged private-chef services in Guanacaste through the business operating as GerLi's Kitchen. We state that approximately US$4,350–US$4,360 was paid for the arranged services and that the remaining repayment is unresolved. We are publishing this page so prospective travelers can review the record before making a similar booking decision.</p>
+      <p>Our family arrived on Friday, June 19, 2026, and the chef prepared food that day. On Saturday, June 20, he also prepared food for our mother's 80th birthday. No chef service was planned for Sunday, June 21. On Monday, June 22, the chef told us that he had been in an accident and could not continue.</p>
+      <p>On Tuesday, June 23, the family states that the chef came to the house, rang the doorbell, and immediately returned to his car and drove away. Family members say they went outside immediately and watched him leave. The family alleges that this brief appearance was intended to create the impression that he had returned but no one answered. Chef service did not resume. The family continued texting during the remainder of the trip in an attempt to resolve the matter and states that it later filed a police report. A copy of that report has not yet been added to this record.</p>
       <div class="notice"><strong>Why the cash gap matters.</strong> The family states that, before cooking would begin, the chef personally requested an additional cash payment. Comparing the family's asserted US$4,350–US$4,360 total with the business's later US$2,770 accounting leaves approximately US$1,580–US$1,590 of the family's asserted payments unreflected in that accounting. The family states that this unreflected portion was among cash requested in person. The business disputes the total, and the exact cash amount and reconciliation remain disputed.</div>
       <p>The complete original booking chat, signed contract, payment receipts, and itemized service record are not published here. Those materials contain private information; their absence also means this page does not claim to determine the final balance, exact service value, or contractual responsibility.</p>
+    </section>
+
+    <section id="pattern">
+      <h2>The booking pattern alleged by the family</h2>
+      <p>The family alleges that its experience followed the sequence below. The labels describe the family's accusation; they are not a court or police finding, and the reported accident has not been independently verified.</p>
+      <div class="pattern-grid" role="list" aria-label="Five-step booking pattern alleged by the family">
+        <article class="pattern-step" role="listitem"><h3>Advance payment</h3><p>The family says it paid for a multi-meal booking, including cash personally requested before cooking would begin.</p></article>
+        <article class="pattern-step" role="listitem"><h3>Brief initial service</h3><p>The chef prepared food on June 19 and for the mother's 80th birthday on June 20.</p></article>
+        <article class="pattern-step" role="listitem"><h3>Accident explanation</h3><p>On June 22, the chef said he had been in an accident and could not continue.</p></article>
+        <article class="pattern-step" role="listitem"><h3>Service stopped</h3><p>On June 23, the family says he rang the doorbell and immediately drove away. No further chef service was provided.</p></article>
+        <article class="pattern-step" role="listitem"><h3>Repayment unresolved</h3><p>Texts continued, and US$500 was later acknowledged as returned, but the accounting and remaining repayment remain disputed.</p></article>
+      </div>
+      <div class="notice"><strong>Why the family believes this may be a repeated pattern.</strong> A separate Reddit author independently described an advance-paid multi-meal booking, initial service, an accident explanation, service ending before completion, and a later repayment dispute. These similarities are why the family alleges a repeatable scheme. The two accounts remain separate allegations; their dates, amounts, and communications differ, and the similarity alone does not establish criminal intent.</div>
     </section>
 
     <section id="business">
@@ -94,6 +115,12 @@
       <h2>Dated public timeline</h2>
       <ol class="timeline">
         <li><time>January 8, 2026</time><strong>Separate public Reddit report.</strong> A traveler posts a first-person account about a different GerLi's Kitchen booking in r/CostaRicaTravel. <a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/warning_about_gerlis_kitchen_private_chef_scam_in/" target="_blank" rel="noopener noreferrer">Read the original post and full discussion</a>.</li>
+        <li><time>June 19, 2026</time><strong>Family arrival and initial service.</strong> The family states that it arrived in Costa Rica and the chef prepared food that day.</li>
+        <li><time>June 20, 2026</time><strong>80th birthday service.</strong> The family states that the chef prepared food for the mother's 80th birthday.</li>
+        <li><time>June 21, 2026</time><strong>No chef service scheduled.</strong> The family states that no chef service was planned for Sunday.</li>
+        <li><time>June 22, 2026</time><strong>Accident explanation.</strong> The family states that the chef said he had been in an accident and could not continue.</li>
+        <li><time>June 23, 2026</time><strong>Doorbell appearance and departure.</strong> The family states that the chef came to the house, rang the doorbell, and immediately drove away. Family members say they went outside and watched him leave. No chef service resumed.</li>
+        <li><time>Remainder of trip and afterward</time><strong>Attempts to resolve and police report.</strong> The family states that it continued texting during the trip and later filed a police report. The report copy, agency, report number, and filing date are pending for this public record.</li>
         <li><time>July 20, 2026</time><strong>Family repayment request.</strong> The family requests US$2,000 from its asserted US$4,300 payment. The business refers to a US$2,450 contract and a US$500 repayment, but does not provide the later detailed US$2,770 payment breakdown in the visible message sequence.</li>
         <li><time>July 21, 2026</time><strong>Follow-up request.</strong> The family again asks the business to honor the repayment commitment it says was made.</li>
         <li><time>July 22, 2026</time><strong>Detailed business accounting.</strong> The business states US$2,170 through Wise plus US$600 cash, claims grocery/special-order/initial-service expenses, and says US$500 was returned.</li>
@@ -128,10 +155,11 @@
       <ul>
         <li>The signed contract and any amendments.</li>
         <li>Wise receipts, evidence of the cash request and payment, a reconciliation of the disputed cash total, and a record of the stated US$500 repayment.</li>
-        <li>The original booking chat and a meal-by-meal delivery record.</li>
+        <li>The original booking chat or call log supporting the June 22 accident explanation, evidence of the June 23 visit, and a meal-by-meal delivery record after June 20.</li>
         <li>Itemized grocery and special-order expenses.</li>
         <li>The final unpaid balance and whether either side's contractual position is correct.</li>
         <li>Any official platform, payment-provider, or government finding.</li>
+        <li>The police-report copy, filing agency, report number, and filing date.</li>
       </ul>
     </section>
 
@@ -153,6 +181,7 @@
         <thead><tr><th>Record</th><th>Type</th><th>Status</th><th>Public source</th></tr></thead>
         <tbody>
           <tr><td>Family account and July settlement chronology</td><td>First-person account and private exchange</td><td>Attributed; private records redacted</td><td>Family's <a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/comment/ote34ne/" target="_blank" rel="noopener noreferrer">public Reddit comment</a></td></tr>
+          <tr><td>June 19–23 family trip chronology and police-report statement</td><td>Direct family account</td><td>Attributed; itinerary, communications, visit evidence, and report copy pending</td><td>Summarized on this page pending supporting records</td></tr>
           <tr><td>Business payment accounting and response</td><td>Direct business statement</td><td>Disputed by family; private exchange not uploaded</td><td>Summarized on this page with date and attribution</td></tr>
           <tr><td>Separate traveler account</td><td>Public first-person report</td><td>Allegation; separate from family account</td><td><a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/warning_about_gerlis_kitchen_private_chef_scam_in/" target="_blank" rel="noopener noreferrer">Original Reddit post</a></td></tr>
           <tr><td>Family Facebook discussion</td><td>Public family posts</td><td>Same incident, not independent corroboration</td><td><a href="https://www.facebook.com/groups/costaricatravel/posts/27244275088526312/" target="_blank" rel="noopener noreferrer">Costa Rica Travel post</a></td></tr>
