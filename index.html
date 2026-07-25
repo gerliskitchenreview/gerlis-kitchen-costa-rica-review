@@ -13,21 +13,25 @@
     a { color:var(--blue-dark); text-underline-offset:3px; }
     a:focus-visible { outline:3px solid #f5b700; outline-offset:3px; }
     .shell { width:min(100% - 32px, 980px); margin:auto; }
-    .masthead { padding:66px 0 42px; color:#fff; background:linear-gradient(135deg,#0d4264,#135d8d 58%,#1b7a9d); }
+    .masthead { padding:66px 0 46px; color:#fff; background:linear-gradient(135deg,#0d4264,#135d8d 58%,#1b7a9d); }
     .eyebrow { margin:0 0 10px; font-size:.82rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; opacity:.88; }
-    h1 { max-width:850px; margin:0; font-size:clamp(2rem,5vw,3.7rem); line-height:1.08; letter-spacing:-.035em; }
-    .lede { max-width:760px; margin:20px 0 0; font-size:1.15rem; }
+    h1 { max-width:880px; margin:0; font-size:clamp(2rem,5vw,3.5rem); line-height:1.1; letter-spacing:-.03em; }
+    .lede { max-width:780px; margin:20px 0 0; font-size:1.18rem; }
     .status { margin:20px 0 0; font-size:.95rem; opacity:.92; }
     nav { position:sticky; top:0; z-index:5; border-bottom:1px solid var(--line); background:rgba(255,255,255,.96); backdrop-filter:blur(12px); }
     nav ul { display:flex; gap:18px; margin:0; padding:12px 0; overflow:auto; list-style:none; white-space:nowrap; }
     nav a { font-size:.9rem; font-weight:700; text-decoration:none; }
     main { padding:34px 0 76px; }
-    section { scroll-margin-top:60px; margin:0 0 48px; }
-    h2 { margin:0 0 14px; font-size:1.55rem; line-height:1.2; letter-spacing:-.015em; }
-    h3 { margin:22px 0 8px; font-size:1.08rem; }
+    section { scroll-margin-top:60px; margin:0 0 52px; }
+    h2 { margin:0 0 14px; font-size:1.6rem; line-height:1.2; letter-spacing:-.015em; }
+    h3 { margin:30px 0 8px; font-size:1.12rem; }
+    .beat h3 { display:flex; align-items:center; gap:10px; }
+    .beat h3::before { content:""; flex:0 0 10px; height:10px; border-radius:50%; background:var(--blue); }
     p { margin:0 0 14px; }
     .notice { padding:18px 20px; border-left:5px solid var(--blue); background:var(--wash); border-radius:0 10px 10px 0; }
     .notice strong { color:var(--blue-dark); }
+    .notice.warn { border-left-color:#b76e00; background:#fffaf0; }
+    .notice.warn strong { color:#8a5700; }
     .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
     .card { padding:20px; border:1px solid var(--line); border-radius:12px; background:#fff; }
     .card h3 { margin-top:0; }
@@ -36,6 +40,7 @@
     .tag.open { background:#edf7ef; color:var(--green); }
     blockquote { margin:16px 0; padding:14px 18px; border-left:4px solid #8cb7cd; background:#f7fafc; color:#253746; }
     blockquote p:last-child { margin-bottom:0; }
+    blockquote cite { display:block; margin-top:8px; font-size:.88rem; font-style:normal; color:var(--muted); }
     .timeline { margin:0; padding:0; list-style:none; border-left:2px solid var(--line); }
     .timeline li { position:relative; padding:0 0 24px 26px; }
     .timeline li::before { position:absolute; left:-7px; top:5px; width:12px; height:12px; border-radius:50%; background:var(--blue); content:""; }
@@ -62,37 +67,53 @@
 <body>
   <header class="masthead">
     <div class="shell">
-      <p class="eyebrow">Consumer information record</p>
-      <h1>Documented private-chef booking and repayment dispute in Guanacaste</h1>
-      <p class="lede">This page collects two separate public first-person accounts, the business's later written position, and practical booking safeguards. It is intended to help travelers inspect the underlying sources and make their own decisions.</p>
-      <p class="status"><strong>Last reviewed: July 24, 2026.</strong> This is not a legal finding. Material claims are attributed to their source and updated if reliable records change the account.</p>
+      <p class="eyebrow">A first-person consumer warning</p>
+      <h1>Halfway through our trip, we googled our private chef. Another family had already written the warning.</h1>
+      <p class="lede">In June 2026 my family hired a private chef in Guanacaste, Costa Rica for a week of meals around my mother's 80th birthday. We paid approximately US$4,350–US$4,360. We received three meals, an accident story, and a doorbell ring. Then we found a Reddit post from January describing, step for step, the same sequence happening to another family. This page tells the whole story, with the receipts, so it doesn't happen to you.</p>
+      <p class="status"><strong>Last reviewed: July 24, 2026.</strong> This is my own first-person account of a documented private-chef booking and repayment dispute. It is not a legal finding; the business's side is included in full below.</p>
     </div>
   </header>
 
   <nav aria-label="Page sections"><div class="shell"><ul>
-    <li><a href="#summary">Summary</a></li><li><a href="#family">Family account</a></li><li><a href="#pattern">Alleged pattern</a></li><li><a href="#business">Business response</a></li><li><a href="#timeline">Timeline</a></li><li><a href="#other-report">Other public report</a></li><li><a href="#sources">Sources</a></li>
+    <li><a href="#story">The story</a></li><li><a href="#money">The money</a></li><li><a href="#pattern">The pattern</a></li><li><a href="#business">Business response</a></li><li><a href="#timeline">Timeline</a></li><li><a href="#other-report">The other report</a></li><li><a href="#safeguards">Protect yourself</a></li><li><a href="#sources">Sources</a></li>
   </ul></div></nav>
 
   <main class="shell">
-    <section id="summary">
-      <h2>What this page documents</h2>
-      <div class="notice"><strong>Evidence standard.</strong> Unlabeled statements are my own account, as a family member with firsthand knowledge, writing this record myself. “Business stated” identifies the business's position in a July 2026 WhatsApp settlement exchange. “Public report alleges” identifies another author's public Reddit account. I do not publish raw private chat records, contact details, payment identifiers, or private documents.</div>
-      <div class="grid" style="margin-top:16px">
-        <article class="card"><span class="tag">First-person account</span><h3>My account</h3><p>My family paid approximately US$4,350–US$4,360 for arranged private-chef services, received only part of the planned service, and has an unresolved repayment balance.</p></article>
-        <article class="card"><span class="tag">Separate public account</span><h3>Earlier Reddit report</h3><p>A separate Reddit author publicly describes a different booking, an advance-payment sequence, initial service, an accident explanation, and refund communication they say remained unresolved.</p></article>
-        <article class="card"><span class="tag disputed">Disputed accounting</span><h3>Business position</h3><p>The business gives a lower total received and says funds paid for groceries, special orders, and initial service. I dispute that accounting.</p></article>
-        <article class="card"><span class="tag open">Reader action</span><h3>Use safeguards</h3><p>Keep payments traceable, set written cancellation and refund terms, use milestones, and reconcile grocery costs in writing.</p></article>
-      </div>
+    <section id="read-first">
+      <div class="notice warn"><strong>If you only read one thing:</strong> before booking any private chef, pay 100% traceably (never cash, whatever the stated reason), pay in milestones tied to delivered meals, and search the chef's name plus the word "review" before you send anything. The <a href="#safeguards">full checklist is below</a>. Everything else on this page is why.</div>
     </section>
 
-    <section id="family">
-      <h2>My account</h2>
-      <p>My family arranged private-chef services in Guanacaste through the business operating as GerLi's Kitchen. We paid approximately US$4,350–US$4,360 for the arranged services, and the remaining repayment is unresolved. I'm publishing this page myself, as a member of the family, so prospective travelers can review the record before making a similar booking decision.</p>
-      <h3>How the booking was arranged</h3>
-      <p>Planning ran from June 11 through June 18, 2026 in a shared chat with the chef, who introduced himself as "Gerson," for a signed multi-day package of approximately 14–15 meals plus grocery shopping, cakes, and birthday decorations. On June 18, the day before arrival, we sent the chef our own itemized total, which he did not dispute at the time: initial contract US$2,450, supplemental days US$1,410, pantry US$250, decorations US$250, for a total of US$4,360. Two Wise payments of US$735 each had already been sent; the chef asked for an additional US$700 by Wise that same day, bringing the traceable Wise total to US$2,170 across three payments — a figure that exactly matches the amount the business itself later stated it received by Wise in its July accounting.</p>
-      <p>We arrived on Friday, June 19, 2026, and the chef prepared food that day. On Saturday, June 20, he also prepared food for my mother's 80th birthday, including a cake and balloon decorations arranged in advance. Service continued on a smaller scale on Sunday, June 21 (grocery restocking); no separate full chef service was scheduled that day. On Monday, June 22, the chef told us he had been in an accident and could not continue lunch, saying a staff member had been injured; we agreed to move that day's meals to the following day. During this exchange, we directly told the chef about the January 2026 Reddit report described below, noting the similarity in fact pattern; he did not dispute awareness of it.</p>
-      <p>On Tuesday, June 23, the chef came to the house, rang the doorbell, and immediately returned to his car and drove away. We went outside immediately and watched him leave. The chef says the villa's guard denied him entry, and describes this as a breach of a confidentiality clause over sharing his identification in the group chat. We reached the gate within about five minutes of being notified, the concierge welcomed him back, and guards had only asked him to wait — he was not denied entry outright. Either way, chef service did not resume after this point. Of the roughly 14–15 contracted meals, 3 were delivered before service stopped. We continued texting during the remainder of the trip in an attempt to resolve the matter and later filed a police report. A copy of that report has not yet been added to this record.</p>
-      <div class="notice"><strong>Why the cash gap matters.</strong> Before cooking would begin, the chef personally requested an additional cash payment. In our original booking chat, he wrote on June 18: "please remember to have the rest of the cash ready when we meet up... having that cash on hand is super important for me to keep moving forward." That evening we and the chef both confirmed a remaining cash balance near US$2,190 (not including cake or other extras) was expected in person on arrival. Comparing that figure with the business's later US$600 cash acknowledgment, and comparing our asserted US$4,350–US$4,360 total with the business's later US$2,770 accounting, leaves approximately US$1,580–US$1,590 of our payments unreflected in that accounting. The business disputes the total, and the exact cash amount and reconciliation remain disputed — but the written, dated request for that cash, made before any dispute existed, is now part of the record.</div>
+    <section id="story" class="beat">
+      <h2>The story</h2>
+
+      <h3>The booking felt great</h3>
+      <p>We planned this trip for months: fourteen of us in a villa near Tamarindo for my mother's 80th birthday. On June 11 my brother set up a WhatsApp group with the chef behind GerLi's Kitchen, who introduced himself as Gerson. The early chat reads like everything going right. Grocery lists. Cake designs for "Happy 80th Birthday Granny June." A balloon decorator, white and gold for the white-party theme. "Everything is on its way, ready for your arrival," he wrote. We sent two Wise payments of US$735 each against a signed contract.</p>
+
+      <h3>Then everything had to be cash</h3>
+      <p>On June 18, the day before we landed, the tone shifted. He messaged:</p>
+      <blockquote><p>"Quick reminder for tomorrow: please remember to have the rest of the cash ready when we meet up. Since I'm juggling multiple budgets at once to make sure everything is perfect, having that cash on hand is super important for me to keep moving forward..."</p><cite>The chef, June 18, 2026, in our booking chat</cite></blockquote>
+      <p>He explained that Wise payments meant taxes for him, so we could "send a portion... maybe $500, and the rest in cash." One more US$700 Wise transfer went through that day, bringing the traceable total to US$2,170 across three payments. That same afternoon we sent him our itemized tally, which he did not dispute: initial contract US$2,450, supplemental days US$1,410, pantry US$250, decorations US$250. Total: US$4,360. The remaining balance, roughly US$2,190, would be handed over in cash when we arrived, exactly as he'd asked.</p>
+
+      <h3>Three good days</h3>
+      <p>He delivered, at first. We arrived Friday, June 19, 2026, and he cooked that night. Saturday, June 20, was the birthday: the cake, the balloons, dinner for the whole family. My mother turned 80 surrounded by her kids and grandkids, and honestly, the food was good. Sunday, June 21 was a scheduled quiet day; he restocked groceries.</p>
+
+      <h3>The accident text</h3>
+      <p>Monday, June 22, we were out on a diving trip when the message came in at 12:08 PM: he'd had a minor car accident, lunch was impossible, could we reschedule to tomorrow. Accidents happen; we said fine, offered to cover an Uber so dinner could still go ahead. He couldn't do dinner either. Something about the volume of explanation, paragraphs and paragraphs of it, made us uneasy.</p>
+
+      <h3>So we googled him</h3>
+      <p>That afternoon, sitting in a villa in Costa Rica with a paid-up chef who had suddenly stopped cooking, we searched his business name. The top result stopped us cold: a January 2026 post in r/CostaRicaTravel, written by another family about the same business. Contract. 50% upfront via Wise. Professional and friendly. Initial meals delivered. Then an accident. Then refund promises. Then silence. It was our week, written down six months before it happened to us.</p>
+      <p>We sent him the link that same afternoon and told him that, given the money at stake, we were nervous. He called it a misunderstanding and promised to resume the next day. He did not dispute knowing about the post.</p>
+
+      <h3>The doorbell</h3>
+      <p>Tuesday, June 23: he agreed to arrive at 11 AM and finish out the week. He came to the property, and by our account rang the doorbell, and immediately drove away. We went outside right away and watched him leave. His version differs: he says the gate guard denied him entry and calls that a breach of a confidentiality clause, because we had verified his identity documents with the villa. Our version: we reached the gate within about five minutes of being notified, the concierge welcomed him back, and the guards had only asked him to wait. Both versions end the same way. He never cooked for us again. Of the roughly 14–15 contracted meals, 3 were delivered.</p>
+
+      <h3>After</h3>
+      <p>We spent the rest of the trip paying out of pocket for meals we had already paid for once, texting him to resolve it, and we later filed a police report. He eventually agreed to return US$2,000 of the money in installments, and named his own dates. US$500 arrived on July 3. The July 12 and July 19 installments he promised never came. As of this writing, that is where it stands: roughly US$3,850 of our money is still with him.</p>
+    </section>
+
+    <section id="money">
+      <h2>The money</h2>
+      <div class="notice"><strong>The cash is the whole game.</strong> Before cooking would begin, the chef personally requested an additional cash payment, in writing, in the message quoted above. That matters because cash is exactly the part his later accounting leaves out. Comparing our US$4,350–US$4,360 total against the business's later US$2,770 accounting leaves approximately US$1,580–US$1,590 of our payments unreflected in that accounting. The business disputes the total, and the exact cash amount and reconciliation remain disputed. But the written, dated request to bring cash, sent before any dispute existed, is part of the record.</div>
       <div class="chart-wrap" role="img" aria-label="Payment reconciliation chart. Top bar: what I say was paid in total, US$4,360. Bottom bar, same scale: the business's accounting, made up of US$2,170 verified through Wise, US$600 acknowledged in cash, and a hatched US$1,590 segment labeled unaccounted for.">
         <svg viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -101,11 +122,11 @@
               <line x1="0" y1="0" x2="0" y2="8" stroke="#8a5700" stroke-width="2"/>
             </pattern>
           </defs>
-          <text x="0" y="18" font-size="14" font-weight="700" fill="#15202b">What I say was paid</text>
+          <text x="0" y="18" font-size="14" font-weight="700" fill="#15202b">What we paid (our tally, sent to him June 18, undisputed at the time)</text>
           <rect x="0" y="28" width="600" height="38" rx="6" fill="#135d8d"/>
           <text x="14" y="53" font-size="15" font-weight="700" fill="#ffffff">US$4,360 total</text>
 
-          <text x="0" y="100" font-size="14" font-weight="700" fill="#15202b">The business's own accounting</text>
+          <text x="0" y="100" font-size="14" font-weight="700" fill="#15202b">What his July 22 accounting admits receiving</text>
           <rect x="0" y="110" width="298.6" height="38" fill="#0f6f6b"/>
           <text x="12" y="135" font-size="13" font-weight="700" fill="#ffffff">Wise: $2,170</text>
           <rect x="298.6" y="110" width="82.6" height="38" fill="#8a5700"/>
@@ -114,71 +135,71 @@
           <text x="388" y="135" font-size="12.5" font-weight="700" fill="#5c3d00">Unaccounted: ~$1,590</text>
           <rect x="0" y="110" width="600" height="38" rx="6" fill="none" stroke="#15202b" stroke-width="1"/>
         </svg>
-        <p class="small" style="margin-top:10px">Bar widths are proportional to dollar amounts, both on the same scale. The business's July 22 accounting (US$2,170 verified through Wise, plus US$600 acknowledged in cash) totals US$2,770 — leaving roughly US$1,590 of my asserted US$4,360 unaccounted for. That gap is disputed, not proven, but shown to scale here.</p>
+        <p class="small" style="margin-top:10px">Bar widths are proportional, on the same scale. The Wise figure is the one number both sides agree on: our three transfers of $735 + $735 + $700 match the US$2,170 he acknowledged, to the dollar. The dispute is the cash, which is the portion he asked for.</p>
       </div>
-      <p>I have now reviewed the complete original booking chat for this record; it corroborates the Wise payment totals, the cash request, and the meal count above. The signed contract document, payment receipts, and a full itemized service record are still not published here, and the original chat itself is not published in raw form. Those materials contain private information; their absence also means this page does not claim to determine the final balance, exact service value, or contractual responsibility.</p>
+      <p>I have reviewed the complete original booking chat for this record; it corroborates the Wise payment totals, the cash request, and the meal count above. The signed contract document, payment receipts, and a full itemized service record are not published here, and the chat itself is not published in raw form, because they contain private information. Their absence also means this page does not claim to determine the final balance, exact service value, or contractual responsibility.</p>
     </section>
 
     <section id="pattern">
       <h2>The pattern I believe this followed</h2>
-      <p>Here is the sequence as I experienced it. These are not a court or police finding, and the reported accident has not been independently verified.</p>
+      <p>Here is the sequence as I experienced it, and why finding the January post mid-trip changed how we read our own week. These labels are my characterization, not a court or police finding, and the reported accident has not been independently verified.</p>
       <div class="pattern-grid" role="list" aria-label="Five-step booking pattern I believe this followed">
         <article class="pattern-step" role="listitem"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#8a5700" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 15.5c0 1 1 1.8 3 1.8s3-.8 3-1.9c0-2.6-6-1-6-3.6 0-1.1 1-1.9 3-1.9s3 .8 3 1.8" stroke-linecap="round"/><path d="M12 6.3v1.4M12 16.3v1.4" stroke-linecap="round"/></svg><h3>Advance payment</h3><p>We paid for a multi-meal booking, including cash personally requested before cooking would begin.</p></article>
-        <article class="pattern-step" role="listitem"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#8a5700" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 6.5v5.5l3.5 2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Brief initial service</h3><p>The chef prepared food on June 19 and for my mother's 80th birthday on June 20.</p></article>
-        <article class="pattern-step" role="listitem"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#8a5700" stroke-width="1.8" stroke-linejoin="round"><path d="M12 4 21 19H3z"/><path d="M12 10v4" stroke-linecap="round"/><circle cx="12" cy="16.7" r=".9" fill="#8a5700" stroke="none"/></svg><h3>Accident explanation</h3><p>On June 22, the chef said he had been in an accident and could not continue.</p></article>
+        <article class="pattern-step" role="listitem"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#8a5700" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 6.5v5.5l3.5 2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Brief initial service</h3><p>The chef prepared food on June 19 and for my mother's 80th birthday on June 20. It was genuinely good.</p></article>
+        <article class="pattern-step" role="listitem"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#8a5700" stroke-width="1.8" stroke-linejoin="round"><path d="M12 4 21 19H3z"/><path d="M12 10v4" stroke-linecap="round"/><circle cx="12" cy="16.7" r=".9" fill="#8a5700" stroke="none"/></svg><h3>Accident explanation</h3><p>On June 22, once the balance was fully paid, the chef said he had been in an accident and could not continue.</p></article>
         <article class="pattern-step" role="listitem"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#8a5700" stroke-width="1.8"><rect x="6" y="3.5" width="11" height="17" rx="1"/><circle cx="14.5" cy="12" r=".9" fill="#8a5700" stroke="none"/><path d="M17 8.5h3.5M20.5 8.5v7" stroke-linecap="round"/></svg><h3>Service stopped</h3><p>On June 23, he rang the doorbell and immediately drove away. No further chef service was provided.</p></article>
-        <article class="pattern-step" role="listitem"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#8a5700" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.7L4 16"/><path d="M4 20v-4h4"/></svg><h3>Repayment unresolved</h3><p>Texts continued, and US$500 was later acknowledged as returned, but the accounting and remaining repayment remain disputed.</p></article>
+        <article class="pattern-step" role="listitem"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#8a5700" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.7L4 16"/><path d="M4 20v-4h4"/></svg><h3>Repayment unresolved</h3><p>Refund promised in installments; US$500 returned; the promised dates then passed with nothing.</p></article>
       </div>
-      <div class="notice"><strong>Why I believe this may be a repeated pattern.</strong> A separate Reddit author independently described an advance-paid multi-meal booking, initial service, an accident explanation, service ending before completion, and a later repayment dispute. These similarities are why I believe this may be a repeatable scheme. The two accounts remain separate allegations; their dates, amounts, and communications differ, and the similarity alone does not establish criminal intent.</div>
+      <div class="notice"><strong>Why this reads as a repeat to me.</strong> The January Reddit author independently described an advance-paid multi-meal booking, initial service, an accident explanation, service ending before completion, and a later repayment dispute. We didn't go looking for a pattern; we found their post in the middle of living it. The two accounts remain separate allegations with different dates and amounts, and the similarity alone does not establish criminal intent. Read theirs and judge for yourself.</div>
     </section>
 
     <section id="business">
       <h2>What the business said in the July 2026 exchange</h2>
-      <p>In the visible settlement group, the business characterized the matter as a contract dispute. It stated that a signed contract was for US$2,450 and that US$500 had been sent back.</p>
+      <p>Fairness requires his side, so here it is. In the settlement exchange, the business characterized the matter as a contract dispute. It stated that the signed contract was for US$2,450 and that US$500 had been sent back.</p>
       <p>On July 22, the business provided its detailed payment accounting: US$2,170 through Wise plus US$600 cash, or US$2,770 total. It said the funds were used for groceries, special orders, and initial service. It also said it could not make further payment and connected that position to lost work after online criticism.</p>
-      <h3>Repayment installments</h3>
-      <p>After negotiation, the business agreed to a US$2,000 settlement — about half of what I say was paid — paid in installments, and named specific dates: an initial US$500, then further payments on Sunday, July 12; Sunday, July 19; and July 26–27. Only the initial US$500 has been received. The July 12 and July 19 dates have passed with no confirmed further payment as of this July 24 update.</p>
-      <p>The business has separately stated that public criticism has cost it work and caused significant personal hardship, and has linked that to its difficulty making further payments. That is the business's own stated position; it is not independently verified and does not change the payment history above.</p>
-      <div class="notice"><strong>My response:</strong> I dispute the US$2,770 accounting and the remaining-balance position. The disputed gap includes cash personally requested before cooking would begin. The business's statements are included here so readers can assess both positions directly.</div>
+      <h3>The repayment installments</h3>
+      <p>After negotiation, the business agreed to a US$2,000 settlement, about half of what I say was paid, in installments on dates it chose itself: an initial US$500, then Sunday, July 12; Sunday, July 19; and July 26–27. Only the initial US$500 has been received. The July 12 and July 19 dates passed with no confirmed further payment as of this July 24 update.</p>
+      <p>The business has separately said that public criticism has cost it work and caused significant personal hardship, and has linked that to its difficulty making further payments. That is its own stated position; it is not independently verified, and it does not change the payment history above.</p>
+      <div class="notice"><strong>My response:</strong> I dispute the US$2,770 accounting and the remaining-balance position. The gap is the cash he asked us, in writing, to bring. His statements are included here in full so you can weigh both positions yourself.</div>
     </section>
 
     <section id="timeline">
-      <h2>Dated public timeline</h2>
+      <h2>Dated timeline, for the record</h2>
       <ol class="timeline">
-        <li><time>January 8, 2026</time><strong>Separate public Reddit report.</strong> A traveler posts a first-person account about a different GerLi's Kitchen booking in r/CostaRicaTravel. <a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/warning_about_gerlis_kitchen_private_chef_scam_in/" target="_blank" rel="noopener noreferrer">Read the original post and full discussion</a>.</li>
-        <li><time>June 11–18, 2026</time><strong>Booking and planning.</strong> We and the chef arrange a signed multi-day package (approximately 14–15 meals, groceries, cakes, decorations) by chat. On June 18, we send our own itemized total (US$4,360) and the chef requests the remaining balance in cash before service begins; US$2,170 is sent traceably by Wise across three payments.</li>
-        <li><time>June 19, 2026</time><strong>Arrival and initial service.</strong> We arrived in Costa Rica and the chef prepared food that day.</li>
-        <li><time>June 20, 2026</time><strong>80th birthday service.</strong> The chef prepared food for my mother's 80th birthday.</li>
-        <li><time>June 21, 2026</time><strong>Reduced service.</strong> Service continued on a smaller scale (grocery restocking); no separate full chef service was scheduled.</li>
-        <li><time>June 22, 2026</time><strong>Accident explanation.</strong> The chef said he had been in an accident and could not continue that day's meals; we also flagged the earlier Reddit report directly to the chef during this exchange.</li>
-        <li><time>June 23, 2026</time><strong>Doorbell appearance and departure.</strong> The chef came to the house, rang the doorbell, and immediately drove away. We went outside and watched him leave. The chef separately says the villa guard denied him entry; we say guards only asked him to wait. No chef service resumed; 3 of the roughly 14–15 contracted meals were delivered.</li>
-        <li><time>Remainder of trip and afterward</time><strong>Attempts to resolve and police report.</strong> We continued texting during the trip and later filed a police report. The report copy, agency, report number, and filing date are pending for this public record.</li>
-        <li><time>July 3–4, 2026</time><strong>Initial repayment.</strong> The business sends, and I confirm receipt of, US$500 toward a negotiated US$2,000 partial settlement.</li>
-        <li><time>July 20, 2026</time><strong>Repayment request.</strong> I request the remaining US$1,500 from the negotiated settlement. The business refers to a US$2,450 contract and the US$500 already sent, but does not provide the later detailed US$2,770 payment breakdown in the visible message sequence.</li>
-        <li><time>July 21, 2026</time><strong>Follow-up request.</strong> I again ask the business to honor the repayment commitment it says was made.</li>
-        <li><time>July 22, 2026</time><strong>Detailed business accounting.</strong> The business states US$2,170 through Wise plus US$600 cash, claims grocery/special-order/initial-service expenses, and says US$500 was returned.</li>
-        <li><time>July 24, 2026</time><strong>Status review.</strong> The July 12 and July 19 installment dates the business named have passed with no confirmed further payment, and no further visible response followed my request for the business's perspective.</li>
+        <li><time>January 8, 2026</time><strong>The warning we hadn't seen yet.</strong> A traveler posts a first-person account about a different GerLi's Kitchen booking in r/CostaRicaTravel. <a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/warning_about_gerlis_kitchen_private_chef_scam_in/" target="_blank" rel="noopener noreferrer">Read the original post and full discussion</a>.</li>
+        <li><time>June 11–18, 2026</time><strong>Booking and planning.</strong> We and the chef arrange a signed multi-day package (approximately 14–15 meals, groceries, cakes, decorations) by chat. On June 18 we send our itemized total (US$4,360) and the chef requests the remaining balance in cash before service begins; US$2,170 is sent traceably by Wise across three payments.</li>
+        <li><time>June 19, 2026</time><strong>Arrival and first dinner.</strong> We arrived in Costa Rica and the chef prepared food that day.</li>
+        <li><time>June 20, 2026</time><strong>The 80th birthday.</strong> The chef prepared food for my mother's 80th birthday, with the cake and decorations arranged in advance.</li>
+        <li><time>June 21, 2026</time><strong>Quiet day.</strong> Grocery restocking; no separate full chef service was scheduled.</li>
+        <li><time>June 22, 2026</time><strong>The accident text, and the search.</strong> The chef said he had been in an accident and could not continue that day's meals. That afternoon we found the January Reddit post and sent it to him directly; he did not dispute awareness of it.</li>
+        <li><time>June 23, 2026</time><strong>The doorbell.</strong> The chef came to the house, rang the doorbell, and immediately drove away. We went outside and watched him leave. He says the villa guard denied him entry; we say the guards only asked him to wait. No chef service resumed. 3 of the roughly 14–15 contracted meals were delivered.</li>
+        <li><time>Remainder of trip and afterward</time><strong>Trying to resolve it.</strong> We continued texting during the trip and later filed a police report. The report copy, agency, report number, and filing date are pending for this public record.</li>
+        <li><time>July 3–4, 2026</time><strong>First and only repayment.</strong> The business sends, and I confirm receipt of, US$500 toward a negotiated US$2,000 partial settlement.</li>
+        <li><time>July 20, 2026</time><strong>Chasing the balance.</strong> I request the remaining US$1,500. The business refers to the US$2,450 contract and the US$500 already sent, without yet providing its detailed payment breakdown.</li>
+        <li><time>July 21, 2026</time><strong>Follow-up.</strong> I again ask the business to honor the repayment commitment it made.</li>
+        <li><time>July 22, 2026</time><strong>The business's accounting arrives.</strong> US$2,170 through Wise plus US$600 cash; grocery, special-order and initial-service expenses claimed; US$500 returned.</li>
+        <li><time>July 24, 2026</time><strong>Where it stands.</strong> The July 12 and July 19 installment dates the business itself named have passed with no further payment, and no further response has come.</li>
       </ol>
-      <p class="small">Timing limitation: the July settlement group is not the original booking chat. Both have now been reviewed for this record; one business message in the settlement group was deleted, and the visible sequence does not prove that a lower figure was never raised earlier.</p>
+      <p class="small">Timing limitation: the July settlement exchange is separate from the original booking chat. Both have been reviewed for this record; one business message in the settlement exchange was deleted, and the visible sequence does not prove that a lower figure was never raised earlier.</p>
     </section>
 
     <section id="other-report">
-      <h2>A separate public report travelers can inspect</h2>
-      <p>The author of the earlier Reddit post, <a href="https://www.reddit.com/user/Senior_Standard_7810/" target="_blank" rel="noopener noreferrer">u/Senior_Standard_7810</a>, wrote about a different booking: “Everything looked legit, he sent a contract, asked for 50% upfront via Wise, and seemed professional.” The author later wrote: “Refund ‘coming Dec 31,’ then ‘Jan 2,’ then silence.”</p>
-      <blockquote><p>These are the author's public statements about their own experience. They are not proof of the facts in our family's case.</p></blockquote>
-      <p>Readers should <a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/warning_about_gerlis_kitchen_private_chef_scam_in/" target="_blank" rel="noopener noreferrer">read the full thread</a>, including the author's <a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/warning_about_gerlis_kitchen_private_chef_scam_in/nyh1q1t/" target="_blank" rel="noopener noreferrer">follow-up comment</a> and <a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/comment/nyottj0/" target="_blank" rel="noopener noreferrer">payment-method detail</a>. The two Facebook posts listed below concern this family's incident and are not counted as another independent report.</p>
+      <h2>The other family's report</h2>
+      <p>The post we found on June 22 deserves your attention as much as ours does. Its author, <a href="https://www.reddit.com/user/Senior_Standard_7810/" target="_blank" rel="noopener noreferrer">u/Senior_Standard_7810</a>, wrote about a different booking: &ldquo;Everything looked legit, he sent a contract, asked for 50% upfront via Wise, and seemed professional.&rdquo; The author later wrote: &ldquo;Refund &lsquo;coming Dec 31,&rsquo; then &lsquo;Jan 2,&rsquo; then silence.&rdquo;</p>
+      <blockquote><p>These are the author's public statements about their own experience. They are not proof of the facts in our case, and ours are not proof of theirs. Read both and decide.</p></blockquote>
+      <p><a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/warning_about_gerlis_kitchen_private_chef_scam_in/" target="_blank" rel="noopener noreferrer">Read the full thread</a>, including the author's <a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/warning_about_gerlis_kitchen_private_chef_scam_in/nyh1q1t/" target="_blank" rel="noopener noreferrer">follow-up comment</a> and <a href="https://www.reddit.com/r/CostaRicaTravel/comments/1q7ig3l/comment/nyottj0/" target="_blank" rel="noopener noreferrer">payment-method detail</a>. The two Facebook posts listed below concern my family's incident and are not counted as another independent report.</p>
     </section>
 
     <section>
       <h2>Public business context</h2>
       <p>These links identify public business-presence sources. They do not establish responsibility for either dispute.</p>
-      <p>As accessed July 24, 2026, the <a href="https://gerliskitchen.com/" target="_blank" rel="noopener noreferrer">business website</a> describes GerLi's Kitchen as a private-chef service in Guanacaste operating “since 2004,” names Gerson and Lily, and says bookings are confirmed through “a formal agreement (contract and security deposit).” It also says the service can include groceries, preparation, cooking, serving, and cleaning. These are the business's own published descriptions; they provide booking context but do not resolve the disputed accounting or balance.</p>
+      <p>As accessed July 24, 2026, the <a href="https://gerliskitchen.com/" target="_blank" rel="noopener noreferrer">business website</a> describes GerLi's Kitchen as a private-chef service in Guanacaste operating &ldquo;since 2004,&rdquo; names Gerson and Lily, and says bookings are confirmed through &ldquo;a formal agreement (contract and security deposit).&rdquo; It also says the service can include groceries, preparation, cooking, serving, and cleaning. These are the business's own published descriptions; they provide booking context but do not resolve the disputed accounting or balance.</p>
       <ul>
         <li><a href="https://gerliskitchen.com/" target="_blank" rel="noopener noreferrer">GerLi's Kitchen website</a></li>
         <li><a href="https://www.instagram.com/gerliskitchen/" target="_blank" rel="noopener noreferrer">Instagram profile</a></li>
         <li><a href="https://www.miummium.com/es-cr/chef-a-domicilio/gerson-50091" target="_blank" rel="noopener noreferrer">Miummium listing #50091</a></li>
         <li><a href="https://www.takeachef.com/en-cr/chef/gerson-matarrita" target="_blank" rel="noopener noreferrer">Take a Chef link previously associated with the business</a> (currently redirects to a general marketplace page)</li>
-        <li><a href="https://www.facebook.com/groups/costaricatravel/posts/27243995128554308/" target="_blank" rel="noopener noreferrer">Costa Rica Travel Facebook post 1</a> and <a href="https://www.facebook.com/groups/costaricatravel/posts/27244275088526312/" target="_blank" rel="noopener noreferrer">Facebook post 2</a> (both concern the family's account)</li>
+        <li><a href="https://www.facebook.com/groups/costaricatravel/posts/27243995128554308/" target="_blank" rel="noopener noreferrer">Costa Rica Travel Facebook post 1</a> and <a href="https://www.facebook.com/groups/costaricatravel/posts/27244275088526312/" target="_blank" rel="noopener noreferrer">Facebook post 2</a> (both concern my family's incident)</li>
       </ul>
       <p class="small">Balanced context: archival research recorded a strong historical Take a Chef rating and an older favorable Tripadvisor review. Those positive reports are relevant context but do not resolve the later disputes described above.</p>
     </section>
@@ -196,15 +217,16 @@
       </ul>
     </section>
 
-    <section>
-      <h2>Booking safeguards for travelers</h2>
+    <section id="safeguards">
+      <h2>Booking safeguards: how to not be next</h2>
+      <p>Every item on this list exists because of something specific that happened to us or to the January author. Take it seriously even if you take nothing else from this page.</p>
       <ol>
-        <li>Use fully traceable payment methods for the entire amount; treat any request to move part of the payment to cash — even a small portion, even for stated tax reasons — as a warning sign, and retain every receipt.</li>
-        <li>Get the full service scope, exact meal count, cancellation process, and refund terms in writing before paying anything.</li>
-        <li>Use milestone payments tied to delivered services rather than large sums in advance.</li>
-        <li>Confirm changes, missed services, and refund commitments in writing, and treat repeated delay of a promised repayment as a signal to stop further payment.</li>
-        <li>Request an itemized reconciliation of grocery and special-order expenses as they're incurred.</li>
-        <li>Check recent feedback across several platforms, including both favorable and critical accounts, and note if a booking is arranged entirely outside a marketplace's official payment system.</li>
+        <li><strong>Never pay cash, for any stated reason.</strong> Use fully traceable payment methods for the entire amount. A request to move part of the payment to cash, even a small portion, even "for tax reasons," is exactly how the unrecoverable part of our loss happened. Retain every receipt.</li>
+        <li><strong>Get the meal count in writing.</strong> Full service scope, exact meal count, cancellation process, and refund terms, in writing, before paying anything.</li>
+        <li><strong>Pay in milestones tied to delivered meals,</strong> not large sums in advance. A chef who has been paid in full has no financial reason to show up on day four.</li>
+        <li><strong>If service stops, get the resumption plan in writing</strong> with a date, and treat a second delay of a promised repayment as your signal to stop paying and start documenting.</li>
+        <li><strong>Reconcile grocery and special-order expenses as they're incurred,</strong> not after the fact.</li>
+        <li><strong>Search the name before you pay.</strong> Check recent feedback across several platforms, favorable and critical. We found the warning that matched our week two payments too late. And note whether the booking is being steered outside a marketplace's official payment system, as ours was, directly to WhatsApp and Wise.</li>
       </ol>
     </section>
 
